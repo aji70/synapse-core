@@ -10,6 +10,7 @@ pub mod stats;
 pub mod v1;
 pub mod v2;
 pub mod webhook;
+pub mod reconnection;
 pub mod ws;
 
 use crate::error::AppError;

@@ -15,6 +15,25 @@ use std::sync::Arc;
 use std::time::Duration;
 
 /// Rate limiting configuration
+///
+/// # Fields
+///
+/// * `max_requests` - Maximum number of requests allowed within the time window
+/// * `window` - Duration of the time window
+/// * `strategy` - Algorithm to use for rate limiting
+///
+/// # Example
+///
+/// ```
+/// use cache::rate_limiting::{RateLimitConfig, RateLimitStrategy};
+/// use std::time::Duration;
+///
+/// let config = RateLimitConfig {
+///     max_requests: 100,
+///     window: Duration::from_secs(60),
+///     strategy: RateLimitStrategy::TokenBucket,
+/// };
+/// ```
 #[derive(Debug, Clone)]
 pub struct RateLimitConfig {
     /// Maximum number of requests allowed
